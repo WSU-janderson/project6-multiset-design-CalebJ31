@@ -1,0 +1,8 @@
+Introduction
+    - My design will model a player inventory system that uses a HashTable<string, int>. I have chosen this data 
+    structure to model my game system because a HashTable is able to store an item(string) and also keep count(int) 
+    of how many of this item that we have in our inventory. The reason this is the best data structure to use is
+    simply because of the ability to store the number(count) of a certain item that we have. Using a HashTable for
+    our game system will be helpful because knowing how many of an item is extremely important, one example of
+    it's importantance is crafting items, certain items may require a certain amount of different items in order
+    to craft the item.
