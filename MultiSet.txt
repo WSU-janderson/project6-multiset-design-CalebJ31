@@ -147,6 +147,24 @@ If the element does not exist in each table, do not allow the player to perform 
 		- Inventory and Shared Set are empty. This should always fail because there is nothing to truly craft.
 
 Extension Feature
+The extension feature I chose for my game is craftRecipe(). Crafting is an essential part of games with inventories;
+ being able to use items to craft something forces players to make strategic decisions about what they are willing 
+ to sacrifice, and about what they are not willing to. I chose this function to be an extension because it is a 
+ great representation of progression for the player.
+
+	  New Method: craftRecipe(recipe, result)
+		This method takes in the ingredients as the recipe; if the requirements for the recipe are met, then the 
+        item(result) can be crafted. This method must be able to check if the valid ingredients are present, 
+        decrement ingredients from the player's inventory, and increment or add the result to the player's 
+        inventory.
+
+This method will depend on other existing operations in our MultiSet, though. The contains function will be used to 
+see if the player has the items in their inventory that are necessary to craft the item. Another operation that 
+will be used is the count operation. This operation will be used to check if the player has enough of each item. 
+The removal operation will ensure that ingredients are consumed after the player crafts an item. The add operation 
+will be used to add the crafted item to the inventory.
+
+
 UML Diagram/ Abstraction Boundary
 Trade-Off Analysis
 Alternitive Design Sketch
