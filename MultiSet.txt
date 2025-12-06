@@ -166,6 +166,29 @@ will be used to add the crafted item to the inventory.
 
 
 UML Diagram/ Abstraction Boundary
+
+Hidden Data/Operations:
+
+///////////////////////////////////////////////////////////
+
+
+UML DIAGRAM HERE
+
+
+////////////////////////////////////////////////////////
+		
+        The HashTable data structure is hidden from the user for a few reasons. 
+It is not important for the user to know what data structure is being used. Having the user understand the 
+operations is more valuable the understanding the data structure
+The user knowing the data structure may allow the user to be intentional in breaking the game. There are many 
+situations of the data structure that rely on the best-case performance. The user can intentionally cause 
+collisions.If a user understands what structure is used, this may enable the user to easily modify elements in the table.
+		
+        The helper methods must be hidden because:
+If the consumeIngredients method were visible to the user, the user would be able to use it without having checked 
+if the needed items are present These helpers are not relevant to the user; the user is simply focused on whether 
+they are able to craft the item or not. Hiding these methods endorses simplicity for the user.
+
 Trade-Off Analysis
 Alternitive Design Sketch
 Evaluation Plan
