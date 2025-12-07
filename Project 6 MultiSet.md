@@ -51,10 +51,11 @@ In the selected game scenario, the remove function will decrement the value if t
 `Count Function:`
 
 * **What it does conceptually in your chosen game scenario:** 
-The count function will provide the user with how many occurrences they have of a certain item. This function is important because it can be used for crafting purposes. If a player does not have enough of an item, they are not able to craft another item.  
+
+- The count function will provide the user with how many occurrences they have of a certain item. This function is important because it can be used for crafting purposes. If a player does not have enough of an item, they are not able to craft another item.  
 
 * **Its expected time complexity:**  
-		Simply O(1) time. This function is just retrieving the value stored with the associated key.  
+	- Simply O(1) time. This function is just retrieving the value stored with the associated key.  
 ![](CountPsuedo.png) 
 
 **Figure 2**
