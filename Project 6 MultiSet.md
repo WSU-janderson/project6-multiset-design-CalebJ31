@@ -9,7 +9,7 @@ Our Hash Table exemplifies simplicity; we are able to use the string to store th
 The Hash Table is easily extensible. This is perfect for games in this age, as they are constantly adding features to their architecture. The core operations of the HashTable allow us to add a multitude of things, such as merging inventories, managing player stats, or even managing card games.  
 ### Readability
 HashTables are great for readability. The use of our key-value pairs is evident that the key is the name of the item, and the value is the number of that item. Other operations, like the insert or remove function, further demonstrate this readability and simplicity.  
-### Core Operations
+## Core Operations
 Every MultiSet should have 4 essential operations: an *insert* function, a *remove* function, a *count* function, and a *contains* function
 
 **Client**: Game developers  
@@ -59,10 +59,10 @@ The count function will provide the user with how many occurrences they have of 
 **Figure 2**
 
 **• Possible edge cases or exceptional situations:**  
-\- Getting the value associated with a key that does not exist. In this case, just return zero.  
-	 **• How your underlying data structure supports or constrains the operation:** 
+\- Getting the value associated with a key that does not exist. In this case, just return zero.
 
-		The HashTable supports this operation because of its key-value setup. Since we are storing the count in the value, we can return, value as how many we have. The HashTable also makes this extremely efficient because the value is already stored. If a LinkedList were to be used, each element would have to be checked. If an AVL tree were used, duplicates would lead to a very complicated process. The HashTable is by far the best for the count function.
+**• How your underlying data structure supports or constrains the operation:** 
+The HashTable supports this operation because of its key-value setup. Since we are storing the count in the value, we can return, value as how many we have. The HashTable also makes this extremely efficient because the value is already stored. If a LinkedList were to be used, each element would have to be checked. If an AVL tree were used, duplicates would lead to a very complicated process. The HashTable is by far the best for the count function.
 
 **Contains function:**  
 
