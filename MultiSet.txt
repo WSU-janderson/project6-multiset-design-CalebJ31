@@ -190,6 +190,33 @@ if the needed items are present These helpers are not relevant to the user; the 
 they are able to craft the item or not. Hiding these methods endorses simplicity for the user.
 
 Trade-Off Analysis
+The HashTable was my choice over the Sequence data structure for a few reasons. Mainly, I wanted to prioritize 
+speed in my design. The HashTable provides O(1) average time for my essential operations(add, remove, count, 
+contains) of the game. As a Sequence grows in size, the O(N) is simply not viable for the speed of the game. 
+For example if a player wants to check how many apples they have, the whole sequenced must be traversed to 
+determine the total amount of apples. Also, the Sequence data structure does not store unique duplicates, 
+every insertion is able to put in the Sequence. This is inefficient and a waste of memory.
+
+
+
+          HashTable                 |       Sequence
+add       O(1) average case              O(1)
+remove   O(1) average case              O(N)
+count    O(1) average case              O(n)
+contains  O(1) average case            O(n)
+                            Disadvantages 
+Worst Case is O(n)
+No Guranteed Order                 Slow traversal because of O(N) time.
+                                   Inefficient for memory
+                    Advantages
+Good for memory
+Reduced Search Time
+Scales well for inventory           Easier to understand
+                                    Sequential Order
+                                    Good for ordered data
+
+
+
 Alternitive Design Sketch
 Evaluation Plan
 Conclusion/Reflection
