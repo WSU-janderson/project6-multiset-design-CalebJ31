@@ -83,7 +83,7 @@ The HashTable supports this operation because of its key-value setup. Since we a
 ## **Set Operations**  
 Two set operations that are meaningful in my game are *union\_with()* and *intersection\_with().*
 
-`union\_with():`
+`union_with():`
 
 * **What it accomplishes in gameplay:**
 
@@ -98,7 +98,7 @@ Two set operations that are meaningful in my game are *union\_with()* and *inter
 	**Edge Cases:**  
 		Empty Sets. Empty Sets will be treated as if there is nothing.  
 
-`inersection\_with():`
+`inersection_with():`
 
 * **What it accomplishes in gameplay** 
 
@@ -115,11 +115,12 @@ Two set operations that are meaningful in my game are *union\_with()* and *inter
 		\-Shared element is empty. If the MultiSet we are checking is empty, this may cause an error. This should be handled as if there were no requirements.  
 		\- Inventory and Shared Set are empty. This should always fail because there is nothing to truly craft.  
 ## **Extension Feature**  
-	The extension feature I chose for my game is craftRecipe(). Crafting is an essential part of games with inventories; being able to use items to craft something forces players to make strategic decisions about what they are willing to sacrifice, and about what they are not willing to. I chose this function to be an extension because it is a great representation of progression for the player.  
-**New Method: craftRecipe(recipe, result)**  
-	This method takes in the ingredients as the recipe; if the requirements for the recipe are met, then the item(result) can be crafted. This method must be able to check if the valid ingredients are present, decrement ingredients from the player's inventory, and increment or add the result to the player's inventory  
+The extension feature I chose for my game is craftRecipe(). Crafting is an essential part of games with inventories; being able to use items to craft something forces players to make strategic decisions about what they are willing to sacrifice, and about what they are not willing to. I chose this function to be an extension because it is a great representation of progression for the player.  
 
-	This method will depend on other existing operations in our MultiSet, though. The contains function will be used to see if the player has the items in their inventory that are necessary to craft the item. Another operation that will be used is the count operation. This operation will be used to check if the player has enough of each item. The removal operation will ensure that ingredients are consumed after the player crafts an item. The add operation will be used to add the crafted item to the inventory.
+**New Method: craftRecipe(recipe, result)**  
+This method takes in the ingredients as the recipe; if the requirements for the recipe are met, then the item(result) can be crafted. This method must be able to check if the valid ingredients are present, decrement ingredients from the player's inventory, and increment or add the result to the player's inventory  
+
+This method will depend on other existing operations in our MultiSet, though. The contains function will be used to see if the player has the items in their inventory that are necessary to craft the item. Another operation that will be used is the count operation. This operation will be used to check if the player has enough of each item. The removal operation will ensure that ingredients are consumed after the player crafts an item. The add operation will be used to add the crafted item to the inventory.
 
 ## **UML Diagram/ Abstraction Boundary**  
 **![](UMLDiagram.png)**  
@@ -129,14 +130,14 @@ Two set operations that are meaningful in my game are *union\_with()* and *inter
 
 **The HashTable data structure is hidden from the user for a few reasons.** 
 
-	* It is not important for the user to know what data structure is being used. Having the user understand the operations is more valuable the understanding the data structure  
-	* The user knowing the data structure may allow the user to be intentional in breaking the game. There are many situations of the data structure that rely on the best-case performance. The user can intentionally cause collisions.  
-	* If a user understands what structure is used, this may enable the user to easily modify elements in the table.
+- It is not important for the user to know what data structure is being used. Having the user understand the operations is more valuable the understanding the data structure  
+- The user knowing the data structure may allow the user to be intentional in breaking the game. There are many situations of the data structure that rely on the best-case performance. The user can intentionally cause collisions.  
+- If a user understands what structure is used, this may enable the user to easily modify elements in the table.
 
 **The helper methods must be hidden because:**
 
-	* If the consumeIngredients method were visible to the user, the user would be able to use it without having checked if the needed items are present  
-	* These helpers are not relevant to the user; the user is simply focused on whether they are able to craft the item or not. Hiding these methods endorses simplicity for the user.
+- If the consumeIngredients method were visible to the user, the user would be able to use it without having checked if the needed items are present  
+- These helpers are not relevant to the user; the user is simply focused on whether they are able to craft the item or not. Hiding these methods endorses simplicity for the user.
 
 ## **Trade-Off Analysis**  
 
@@ -152,7 +153,7 @@ The HashTable was my choice over the Sequence data structure for a few reasons. 
 | Advantages | Good for memory Reduced Search Time Scales well for inventory | Easier to understand Sequential Order Good for ordered data |
 
 ## **Alternative Design Sketch**  
-	If I had chosen to use the Sequence data structure for my design, the main difference would be the storage. For the HashTable, I am using { “arrow”, 2} to show that the player has 2 arrows in their inventory. For the Sequence, the data could be stored like this \[ “arrow”, “x”, “arrow”, “x”\].
+If I had chosen to use the Sequence data structure for my design, the main difference would be the storage. For the HashTable, I am using { “arrow”, 2} to show that the player has 2 arrows in their inventory. For the Sequence, the data could be stored like this \[ “arrow”, “x”, “arrow”, “x”\].
 
 **How it would differ:**
 
@@ -165,7 +166,7 @@ The HashTable was my choice over the Sequence data structure for a few reasons. 
 | **craftRecipe** | Use a linear search multiple times to verify each ingredient. |
 
 ## **Evaluation Plan**  
-	If I were to test this design, if implemented, this is the path I would follow these tests.
+If I were to test this design, if implemented, this is the path I would follow these tests.
 
 `Add:`
 
@@ -187,11 +188,11 @@ The HashTable was my choice over the Sequence data structure for a few reasons. 
 * If the count is greater than zero, return true  
 * If the count is less than 0(does not exist), return false
 
-`Union\_with:`
+`Union_with:`
 
 * Check that elements from the two sets being joined are added to a new set
 
-`Intersection\_with:`
+`Intersection_with:`
 
 * Check that this operation only returns true when elements are present in both sets.
 
@@ -209,7 +210,9 @@ The HashTable was my choice over the Sequence data structure for a few reasons. 
 
 ## **Conclusion/Reflection**  
 The design of this MultiSet implementation is strong and effective because of its speed and simplicity. The O(1) average time is perfect for a game inventory system, providing quick responses. The Key-Value structure used is great for modeling items and their count, which in turn is effective for our memory.  
+
 The few trade-offs sacrificed for the use of our data structure were minimal compared to my goals for this project. The non-guaranteed ordering & O(n) worst-case time complexity in worst-case situations were outweighed by memory efficiency and reduced average-time complexity, among other things. With more time, I would update my operations to perform bulk tasks like removing or adding multiple elements at once. I would also update intersection\_with specifically to be able to see checks for shared items. Upon reflecting, I see how that could provide importance to a game.  
+
 Abstraction was shown through design choices for this implementation. The operations focus on the intended actions, and the data structure in use was hidden from the user. Doing this allows the user not to worry about the more complex implementation details. Encapsulation was shown through hidden helper methods that protected illegal state changes. The count was also protected from ever becoming negative by enforcing controlled access through the public interface, which ensures data integrity. Composition was shown through the craftRecipe() operation. This operation relied on the use of other core operations to simplify logic for the craftRecipe() operation. These three key programming principles were shown through decisions to create simple operations that are easier to understand, the protection of data from being manipulated, and the ability to use core operations to create more complex ones.
 
 **References**  
