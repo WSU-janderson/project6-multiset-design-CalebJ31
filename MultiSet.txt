@@ -10,9 +10,10 @@ Design Philosophy
 -Efficiency 
    	 -For my MultiSet implementation, I wanted to prioritize speed in my design. Speed is a huge focus of 
      all modern games; players want to be able to play a game that runs smoothly and gives seemingly instantaneous 
-     feedback. For this exact reason, this is the main reasoning behind why the HashTable is an efficient choice 
-     for a multiSet implementation. Most operations of the HashTable are constant time, which is perfect for what 
-     I want to achieve speed-wise for the game. We can add more instances of an element without allocating extra 
+     feedback.This is demonstrated by McCoy and Pandey, who note that HashTables are being used to accelerate data 
+     processing(McCoy & Pandey, 2025).For this exact reason, this is the main reasoning behind why the HashTable is an efficient choice 
+     for my MultiSet implementation. Most operations of the HashTable are constant time(Std::unordered_map - Cppreference.com, 2025),
+     which is perfect for what I want to achieve speed-wise for the game. We can add more instances of an element without allocating extra 
      memory for duplicates.
 
 -Simplicity
@@ -250,5 +251,13 @@ Union_with:
         Check that elements from the two sets being joined are added to a new set
 Intersection_with:
         Check that this operation only returns true when elements are present in both sets.
+Extensibility:
+    How many lines needed for a new operation?
+    New operations don’t break existing operations
+    New operations don’t require heavy changes to existing operations
+Maintainability:
+    Is HashTable resized when it grows too large?
+    What time complexity are we getting on operations?
+    How are collisions handled?
 
 Conclusion/Reflection
