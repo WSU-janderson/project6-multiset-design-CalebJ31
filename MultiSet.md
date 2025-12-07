@@ -10,7 +10,7 @@ The Hash Table is easily extensible. This is perfect for games in this age, as t
 ## Readability
 HashTables are great for readability. The use of our key-value pairs is evidently clear that the key is the name of the item, and the value is the number of that item. Other operations like the insert or remove function, further demonstrate this readability
 ## Core Operations
-	Every MultiSet should have 4 essential operations: an insert function, remove function, count function, and a contains function
+Every MultiSet should have 4 essential operations: an insert function, remove function, count function, and a contains function
 
 Insert Function:  
     \-What it does conceptually in your chosen game scenario:   
