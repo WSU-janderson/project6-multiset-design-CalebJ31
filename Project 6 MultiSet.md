@@ -15,7 +15,7 @@ Every MultiSet should have 4 essential operations: an *insert* function, a *remo
 **Client**: Game developers  
 **User**: Consumers of products put forth by developers.
 
-**Insert Function:**
+`**Insert Function:**`
 
 * **What it does conceptually in your chosen game scenario:**
 
@@ -38,12 +38,12 @@ The insert function has O(1) average time. This function simply inserts the key 
 
 In the selected game scenario, the remove function will decrement the value if the item already exists in the table. Further, if there is more than one of the item, the function will remove one of the items from the value. If no more of the item exists, or more simply put, if the value is 0, the item will be removed from the inventory. For example, if a player shoots arrows, every time an arrow is fired, the player must lose an arrow from their inventory, and if they run out of arrows, the item must disappear from the inventory   
 * **It’s expected time complexity:**  
-	This function is expected to have O(1) average time complexity.  
+	- This function is expected to have O(1) average time complexity.  
 * **Possible edge cases or exceptional situations:**
 
-- Count is already 0, in this case, we do not want the player to have negative items. The player should simply run out, so no removal should be performed.  
-- Removing more than the player has. Similar to the last case, we do not want the player to have negative items; therefore, no removal will be performed due to insufficient funds, so to speak.  
-- Removal of an item that does not exist. A player should not lose an item they do not have in their inventory
+	- Count is already 0, in this case, we do not want the player to have negative items. The player should simply run out, so no removal should be performed.  
+	- Removing more than the player has. Similar to the last case, we do not want the player to have negative items; therefore, no removal will be performed due to insufficient funds, so to speak.  
+	- Removal of an item that does not exist. A player should not lose an item they do not have in their inventory
 
  * **How your underlying data structure supports or constrains the operation:**  
 	The use of a HashTable supports this operation because of quick access checking, the value can easily be retrieved and either decremented if it is greater than zero otherwise, if it is equal to zero, the key can be deleted, which helps free up memory after the item is completely gone.  
