@@ -104,9 +104,9 @@ Two set operations that are meaningful in my game are *union\_with()* and *inter
 
 	The intersection operation can be used for checking if a player has the needed materials in their inventory to craft an item. If the items are not shared, the player will be blocked from crafting the item. This operation can also be used for determining if a player has the required items to complete a quest.  
 
- * **How it manipulates your data structure** 
+* **How it manipulates your data structure** 
 
- - This operation manipulates the data structure by iterating through the HashTables looking for the element in each table. If the element exists in each table, then allow the player to perform the necessary action. If the element does not exist in each table, do not allow the player to perform the action.
+	- This operation manipulates the data structure by iterating through the HashTables looking for the element in each table. If the element exists in each table, then allow the player to perform the necessary action. If the element does not exist in each table, do not allow the player to perform the action.
 
 * **Its conceptual complexity and any relevant edge cases**   
 	**Conceptual complexity:**  
