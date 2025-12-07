@@ -77,19 +77,19 @@ The count function will provide the user with how many occurrences they have of 
 	 **• How your underlying data structure supports or constrains the operation:**  
 	   A HashTable supports this operation well, since this operation only cares if the key exists, so we are just checking for that. This function is also extremely quick and efficient.  
 	  
-**Set Operations**  
+## **Set Operations**  
 	Two set operations that are meaningful in my game are *union\_with()* and *intersection\_with().*
 
 **union\_with():**
 
-**What it accomplishes in gameplay:**
+* **What it accomplishes in gameplay:**
 
 	The union function will be pivotal in joining the player's inventory with any other instance when the player obtains loot or new items. The union operation is very important for the game because it is heavily focused on obtaining loot from a multitude of situations that could range from other players, enemies, or chests. Another application of this function is that the player could have items across multiple chests, so the total count of the items in all chests is be able to be shown.
 
-**• How it manipulates your data structure :**  
+* **How it manipulates your data structure :**  
 	This operation manipulates the data structure by iterating through each key-value pair. The operation then checks if the element is in the current MultiSet, if it is not the key-value pair is inserted with the count obtained from the other MultiSet. If the element is there, the operation adds the counts together to obtain the total count.  
 	  
-**• Its conceptual complexity and any relevant edge cases**   
+* **Its conceptual complexity and any relevant edge cases**   
 	**Conceptual:**   
 		The union function is straightforward. This operation acts as a way to add the counts of items together in almost every case. For example, if there is 1 arrow in a MultiSet and 2 in another, there are 3 total arrows. This is the logic behind the operation.  
 	**Edge Cases:**  
@@ -101,11 +101,11 @@ The count function will provide the user with how many occurrences they have of 
 
 	The intersection operation can be used for checking if a player has the needed materials in their inventory to craft an item. If the items are not shared, the player will be blocked from crafting the item. This operation can also be used for determining if a player has the required items to complete a quest.  
 
- * **• How it manipulates your data structure** 
+ * **How it manipulates your data structure** 
 
  This operation manipulates the data structure by iterating through the HashTables looking for the element in each table. If the element exists in each table, then allow the player to perform the necessary action. If the element does not exist in each table, do not allow the player to perform the action.
 
-* **• Its conceptual complexity and any relevant edge cases**   
+* **Its conceptual complexity and any relevant edge cases**   
 	**Conceptual complexity:**  
 		Conceptually, it is clear that this operation is looking for shared elements among both HashTables. The logic required for this is also clear: iterate through and make sure the player has all of the needed items.  
 	**Edge cases:**  
@@ -201,7 +201,7 @@ This method will depend on other existing operations in our MultiSet, though. Th
 * What time complexity are we getting on operations?  
 * How are collisions handled?
 
-**Conclusion/Reflection**  
+## **Conclusion/Reflection**  
 	The design of this MultiSet implementation is strong and effective because of its speed and simplicity. The O(1) average time is perfect for a game inventory system, providing quick responses. The Key-Value structure used is great for modeling items and their count, which in turn is effective for our memory.  
 	The few trade-offs sacrificed for the use of our data structure were minimal compared to my goals for this project. The non-guaranteed ordering & O(n) worst-case time complexity in worst-case situations were outweighed by memory efficiency and reduced average-time complexity, among other things. With more time, I would update my operations to perform bulk tasks like removing or adding multiple elements at once. I would also update intersection\_with specifically to be able to see checks for shared items. Upon reflecting, I see how that could provide importance to a game.  
 	Abstraction was shown through design choices for this implementation. The operations focus on the intended actions, and the data structure in use was hidden from the user. Doing this allows the user not to worry about the more complex implementation details. Encapsulation was shown through hidden helper methods that protected illegal state changes. The count was also protected from ever becoming negative by enforcing controlled access through the public interface, which ensures data integrity. Composition was shown through the craftRecipe() operation. This operation relied on the use of other core operations to simplify logic for the craftRecipe() operation. These three key programming principles were shown through decisions to create simple operations that are easier to understand, the protection of data from being manipulated, and the ability to use core operations to create more complex ones.
