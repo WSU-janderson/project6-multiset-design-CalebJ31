@@ -15,7 +15,7 @@ Every MultiSet should have 4 essential operations: an *insert* function, a *remo
 **Client**: Game developers  
 **User**: Consumers of products put forth by developers.
 
-``**Insert Function:**``
+`Insert Function:`
 
 * **What it does conceptually in your chosen game scenario:**
 
@@ -32,7 +32,7 @@ The insert function has O(1) average time. This function simply inserts the key 
 * **How your underlying data structure supports or constrains the operation:**  
 	The HashTable data structure supports this operation well. The structure of a HashTable using key-value pairs is perfect for what I want to achieve. If a key does not yet exist, the operation simply inserts the key with a value of 1\. If the key does exist, the value is incremented. We are able to have direct access, skipping the need to look through all the keys, which can make our insertion near instantaneous.
 
-**Remove Function:**
+`Remove Function:`
 
 *  **What it does conceptually in your chosen game scenario:** 
 
@@ -48,7 +48,7 @@ In the selected game scenario, the remove function will decrement the value if t
  * **How your underlying data structure supports or constrains the operation:**  
 	The use of a HashTable supports this operation because of quick access checking, the value can easily be retrieved and either decremented if it is greater than zero otherwise, if it is equal to zero, the key can be deleted, which helps free up memory after the item is completely gone.  
    
-**Count Function:**
+`Count Function:`
 
 * **What it does conceptually in your chosen game scenario:** 
 The count function will provide the user with how many occurrences they have of a certain item. This function is important because it can be used for crafting purposes. If a player does not have enough of an item, they are not able to craft another item.  
@@ -67,7 +67,7 @@ The count function will provide the user with how many occurrences they have of 
 
 The HashTable supports this operation because of its key-value setup. Since we are storing the count in the value, we can return, value as how many we have. The HashTable also makes this extremely efficient because the value is already stored. If a LinkedList were to be used, each element would have to be checked. If an AVL tree were used, duplicates would lead to a very complicated process. The HashTable is by far the best for the count function.
 
-**Contains function:**  
+`Contains function:` 
 
 * **\-What it does conceptually in your chosen game scenario:**   
 		In my game scenario, the contains function will be used to see if an element exists in the player's inventory. This function can allow a player to use a door if they have a key in their inventory, or even craft items if they have the required items in their inventory  
@@ -83,7 +83,7 @@ The HashTable supports this operation because of its key-value setup. Since we a
 ## **Set Operations**  
 Two set operations that are meaningful in my game are *union\_with()* and *intersection\_with().*
 
-**union\_with():**
+`union\_with():`
 
 * **What it accomplishes in gameplay:**
 
@@ -98,7 +98,7 @@ Two set operations that are meaningful in my game are *union\_with()* and *inter
 	**Edge Cases:**  
 		Empty Sets. Empty Sets will be treated as if there is nothing.  
 
-**inersection\_with():**
+`inersection\_with():`
 
 * **What it accomplishes in gameplay** 
 
