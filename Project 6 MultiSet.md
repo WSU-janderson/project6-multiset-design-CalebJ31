@@ -86,23 +86,22 @@ Two set operations that are meaningful in my game are *union\_with()* and *inter
 `union_with():`
 
 * **What it accomplishes in gameplay:**
-
-	The union function will be pivotal in joining the player's inventory with any other instance when the player obtains loot or new items. The union operation is very important for the game because it is heavily focused on obtaining loot from a multitude of situations that could range from other players, enemies, or chests. Another application of this function is that the player could have items across multiple chests, so the total count of the items in all chests is be able to be shown.
+	- The union function will be pivotal in joining the player's inventory with any other instance when the player obtains loot or new items. The union operation is very important for the game because it is heavily focused on obtaining loot from a multitude of situations that could range from other players, enemies, or chests. Another application of this function is that the player could have items across multiple chests, so the total count of the items in all chests is be able to be shown.
 
 * **How it manipulates your data structure :**  
-	This operation manipulates the data structure by iterating through each key-value pair. The operation then checks if the element is in the current MultiSet, if it is not the key-value pair is inserted with the count obtained from the other MultiSet. If the element is there, the operation adds the counts together to obtain the total count.  
+	- This operation manipulates the data structure by iterating through each key-value pair. The operation then checks if the element is in the current MultiSet, if it is not the key-value pair is inserted with the count obtained from the other MultiSet. If the element is there, the operation adds the counts together to obtain the total count.  
 	  
 * **Its conceptual complexity and any relevant edge cases**   
 	**Conceptual:**   
-		The union function is straightforward. This operation acts as a way to add the counts of items together in almost every case. For example, if there is 1 arrow in a MultiSet and 2 in another, there are 3 total arrows. This is the logic behind the operation.  
+	- The union function is straightforward. This operation acts as a way to add the counts of items together in almost every case. For example, if there is 1 arrow in a MultiSet and 2 in another, there are 3 total arrows. This is the logic behind the operation.  
 	**Edge Cases:**  
-		Empty Sets. Empty Sets will be treated as if there is nothing.  
+	- Empty Sets. Empty Sets will be treated as if there is nothing.  
 
 `inersection_with():`
 
 * **What it accomplishes in gameplay** 
 
-	The intersection operation can be used for checking if a player has the needed materials in their inventory to craft an item. If the items are not shared, the player will be blocked from crafting the item. This operation can also be used for determining if a player has the required items to complete a quest.  
+	- The intersection operation can be used for checking if a player has the needed materials in their inventory to craft an item. If the items are not shared, the player will be blocked from crafting the item. This operation can also be used for determining if a player has the required items to complete a quest.  
 
 * **How it manipulates your data structure** 
 
