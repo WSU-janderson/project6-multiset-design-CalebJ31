@@ -1,6 +1,6 @@
 ### Introduction
 My design will model a player inventory system that uses a HashTable<string, int>. I have chosen this data structure to model my game system because a HashTable is able to store an item(string) and also keep count(int) of how many of this item that we have in our inventory. The reason this is the best data structure to use is simply because of the ability to store the number(count) of a certain item that we have. Using a HashTable for our game system will be helpful because knowing how many of an item is extremely important, one example of it's importance is crafting items, certain items may require a certain amount of different items in order to craft the item.  
-### Design Philosophy
+## Design Philosophy
 ### Efficiency  
 For my MultiSet implementation, I wanted to prioritize speed in my design. Speed is a huge focus of all modern games; players want to be able to play a game that runs smoothly and gives seemingly instantaneous feedback. This is demonstrated by McCoy and Pandey, who note that HashTables are being used to accelerate data processing(McCoy & Pandey, 2025). For this exact reason, this is the main reasoning behind why the HashTable is an efficient choice for a multiSet implementation. Most operations of the HashTable are constant time (*Std::unordered\_map \- Cppreference.com*, 2025), which is perfect for what I want to achieve speed-wise for the game. We can add more instances of an element without allocating extra memory for duplicates.  
 ## Simplicity   
@@ -12,7 +12,7 @@ HashTables are great for readability. The use of our key-value pairs is evidentl
 ## Core Operations
 Every MultiSet should have 4 essential operations: an insert function, remove function, count function, and a contains function
 
-Insert Function:  
+`Insert Function:`
     \-What it does conceptually in your chosen game scenario:   
 	In my chosen game scenario, the insert function is responsible for adding items(key) into our player's inventory. In addition to adding the item(key), the insert function must also add the number of instances. This function can be used to accumulate items that may already be in the table, and update the value to indicate how many of the items the player has in the inventory.  
     • Its expected time complexity:  
@@ -97,7 +97,7 @@ What it accomplishes in gameplay
 This method will depend on other existing operations in our MultiSet, though. The contains function will be used to see if the player has the items in their inventory that are necessary to craft the item. Another operation that will be used is the count operation. This operation will be used to check if the player has enough of each item. The removal operation will ensure that ingredients are consumed after the player crafts an item. The add operation will be used to add the crafted item to the inventory.
 
 **UML Diagram/ Abstraction Boundary**  
-**![][image3]**  
+**![](UMLDiagram.png)**  
 **Figure 3**
 
 	**Hidden Data/Operations:**  
