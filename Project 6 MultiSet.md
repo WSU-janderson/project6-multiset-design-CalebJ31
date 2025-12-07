@@ -17,19 +17,19 @@ Every MultiSet should have 4 essential operations: an *insert* function, a *remo
 
 **Insert Function:**
 
-   **•What it does conceptually in your chosen game scenario:**
+* **What it does conceptually in your chosen game scenario:**
 
 In my chosen game scenario, the insert function is responsible for adding items(key) into our player's inventory. In addition to adding the item(key), the insert function must also add the number of instances. This function can be used to accumulate items that may already be in the table, and update the value to indicate how many of the items the player has in the inventory.  
-    **• Its expected time complexity:**  
+* **Its expected time complexity:**  
 	
 The insert function has O(1) average time. This function simply inserts the key if it is not in the MultiSet; if it is, then it will increment the value.  
 **![](InsertPsuedo.png)**  
 **Figure 1**  
-    **• Possible edge cases or exceptional situations:**
+* **Possible edge cases or exceptional situations:**
 
 - Inserting a key with an empty name
 
-    **• How your underlying data structure supports or constrains the operation:**  
+* **How your underlying data structure supports or constrains the operation:**  
 	The HashTable data structure supports this operation well. The structure of a HashTable using key-value pairs is perfect for what I want to achieve. If a key does not yet exist, the operation simply inserts the key with a value of 1\. If the key does exist, the value is incremented. We are able to have direct access, skipping the need to look through all the keys, which can make our insertion near instantaneous.
 
 **Remove Function:**
@@ -37,32 +37,33 @@ The insert function has O(1) average time. This function simply inserts the key 
 *  **What it does conceptually in your chosen game scenario:** 
 
 In the selected game scenario, the remove function will decrement the value if the item already exists in the table. Further, if there is more than one of the item, the function will remove one of the items from the value. If no more of the item exists, or more simply put, if the value is 0, the item will be removed from the inventory. For example, if a player shoots arrows, every time an arrow is fired, the player must lose an arrow from their inventory, and if they run out of arrows, the item must disappear from the inventory   
- **• It’s expected time complexity:**  
+* **It’s expected time complexity:**  
 	This function is expected to have O(1) average time complexity.  
-  **• Possible edge cases or exceptional situations:**
+* **Possible edge cases or exceptional situations:**
 
 - Count is already 0, in this case, we do not want the player to have negative items. The player should simply run out, so no removal should be performed.  
 - Removing more than the player has. Similar to the last case, we do not want the player to have negative items; therefore, no removal will be performed due to insufficient funds, so to speak.  
 - Removal of an item that does not exist. A player should not lose an item they do not have in their inventory
 
- **• How your underlying data structure supports or constrains the operation:**  
+ * **How your underlying data structure supports or constrains the operation:**  
 	The use of a HashTable supports this operation because of quick access checking, the value can easily be retrieved and either decremented if it is greater than zero otherwise, if it is equal to zero, the key can be deleted, which helps free up memory after the item is completely gone.  
    
 **Count Function:**
 
- **What it does conceptually in your chosen game scenario:** 
+* **What it does conceptually in your chosen game scenario:** 
 The count function will provide the user with how many occurrences they have of a certain item. This function is important because it can be used for crafting purposes. If a player does not have enough of an item, they are not able to craft another item.  
 
-**• Its expected time complexity:**  
+* **Its expected time complexity:**  
 		Simply O(1) time. This function is just retrieving the value stored with the associated key.  
 ![](CountPsuedo.png) 
+
 **Figure 2**
 
-**• Possible edge cases or exceptional situations:**  
+* **Possible edge cases or exceptional situations:**  
 
 \- Getting the value associated with a key that does not exist. In this case, just return zero.
 
-**• How your underlying data structure supports or constrains the operation:** 
+* **How your underlying data structure supports or constrains the operation:** 
 
 The HashTable supports this operation because of its key-value setup. Since we are storing the count in the value, we can return, value as how many we have. The HashTable also makes this extremely efficient because the value is already stored. If a LinkedList were to be used, each element would have to be checked. If an AVL tree were used, duplicates would lead to a very complicated process. The HashTable is by far the best for the count function.
 
