@@ -116,28 +116,31 @@ Two set operations that are meaningful in my game are *union\_with()* and *inter
 		\- Inventory and Shared Set are empty. This should always fail because there is nothing to truly craft.  
 ## **Extension Feature**  
 	The extension feature I chose for my game is craftRecipe(). Crafting is an essential part of games with inventories; being able to use items to craft something forces players to make strategic decisions about what they are willing to sacrifice, and about what they are not willing to. I chose this function to be an extension because it is a great representation of progression for the player.  
-	  **New Method: craftRecipe(recipe, result)**  
-		This method takes in the ingredients as the recipe; if the requirements for the recipe are met, then the item(result) can be crafted. This method must be able to check if the valid ingredients are present, decrement ingredients from the player's inventory, and increment or add the result to the player's inventory  
-This method will depend on other existing operations in our MultiSet, though. The contains function will be used to see if the player has the items in their inventory that are necessary to craft the item. Another operation that will be used is the count operation. This operation will be used to check if the player has enough of each item. The removal operation will ensure that ingredients are consumed after the player crafts an item. The add operation will be used to add the crafted item to the inventory.
+**New Method: craftRecipe(recipe, result)**  
+	This method takes in the ingredients as the recipe; if the requirements for the recipe are met, then the item(result) can be crafted. This method must be able to check if the valid ingredients are present, decrement ingredients from the player's inventory, and increment or add the result to the player's inventory  
+
+	This method will depend on other existing operations in our MultiSet, though. The contains function will be used to see if the player has the items in their inventory that are necessary to craft the item. Another operation that will be used is the count operation. This operation will be used to check if the player has enough of each item. The removal operation will ensure that ingredients are consumed after the player crafts an item. The add operation will be used to add the crafted item to the inventory.
 
 ## **UML Diagram/ Abstraction Boundary**  
 **![](UMLDiagram.png)**  
 **Figure 3**
 
-	**Hidden Data/Operations:**  
-		**The HashTable data structure is hidden from the user for a few reasons.** 
+* **Hidden Data/Operations:** 
 
-* It is not important for the user to know what data structure is being used. Having the user understand the operations is more valuable the understanding the data structure  
-* The user knowing the data structure may allow the user to be intentional in breaking the game. There are many situations of the data structure that rely on the best-case performance. The user can intentionally cause collisions.  
-* If a user understands what structure is used, this may enable the user to easily modify elements in the table.
+**The HashTable data structure is hidden from the user for a few reasons.** 
 
-		**The helper methods must be hidden because:**
+	* It is not important for the user to know what data structure is being used. Having the user understand the operations is more valuable the understanding the data structure  
+	* The user knowing the data structure may allow the user to be intentional in breaking the game. There are many situations of the data structure that rely on the best-case performance. The user can intentionally cause collisions.  
+	* If a user understands what structure is used, this may enable the user to easily modify elements in the table.
 
-* If the consumeIngredients method were visible to the user, the user would be able to use it without having checked if the needed items are present  
-* These helpers are not relevant to the user; the user is simply focused on whether they are able to craft the item or not. Hiding these methods endorses simplicity for the user.
+**The helper methods must be hidden because:**
+
+	* If the consumeIngredients method were visible to the user, the user would be able to use it without having checked if the needed items are present  
+	* These helpers are not relevant to the user; the user is simply focused on whether they are able to craft the item or not. Hiding these methods endorses simplicity for the user.
 
 ## **Trade-Off Analysis**  
-	The HashTable was my choice over the Sequence data structure for a few reasons. Mainly, I wanted to prioritize speed in my design. The HashTable provides O(1) average time for my essential operations(add, remove, count, contains) of the game. As a Sequence grows in size, the O(N) is simply not viable for the speed of the game. For example, if a player wants to check how many apples they have, the whole sequence must be traversed to determine the total amount of apples. Also, the Sequence data structure does not store unique duplicates, every insertion is able to be put in the Sequence. This is inefficient and a waste of memory.
+
+The HashTable was my choice over the Sequence data structure for a few reasons. Mainly, I wanted to prioritize speed in my design. The HashTable provides O(1) average time for my essential operations(add, remove, count, contains) of the game. As a Sequence grows in size, the O(N) is simply not viable for the speed of the game. For example, if a player wants to check how many apples they have, the whole sequence must be traversed to determine the total amount of apples. Also, the Sequence data structure does not store unique duplicates, every insertion is able to be put in the Sequence. This is inefficient and a waste of memory.
 
 |  | HashTable | Sequence |
 | :---- | :---- | :---- |
@@ -151,7 +154,7 @@ This method will depend on other existing operations in our MultiSet, though. Th
 ## **Alternative Design Sketch**  
 	If I had chosen to use the Sequence data structure for my design, the main difference would be the storage. For the HashTable, I am using { “arrow”, 2} to show that the player has 2 arrows in their inventory. For the Sequence, the data could be stored like this \[ “arrow”, “x”, “arrow”, “x”\].
 
-	**How it would differ:**
+**How it would differ:**
 
 | Operation | Modifactions  |
 | :---- | ----- |
@@ -164,41 +167,41 @@ This method will depend on other existing operations in our MultiSet, though. Th
 ## **Evaluation Plan**  
 	If I were to test this design, if implemented, this is the path I would follow these tests.
 
-	*Add*:
+`Add:`
 
 * Check that a new MultiSet is created for unique elements  
 * Check that duplicates are incremented
 
-*Remove:*
+`Remove:`
 
 * Verify count decrements when an element is removed  
 * Verify MultiSet is deleted when count is 1
 
-*Count:*
+`Count:`
 
 * Check count is displaying the quantity of element.  
 * Check that non-existent element, returns 0
 
-*contains:* 
+`contains:` 
 
 * If the count is greater than zero, return true  
 * If the count is less than 0(does not exist), return false
 
-	*Union\_with:*
+`Union\_with:`
 
 * Check that elements from the two sets being joined are added to a new set
 
-	*Intersection\_with:*
+`Intersection\_with:`
 
 * Check that this operation only returns true when elements are present in both sets.
 
-	*Extensibility:*
+`Extensibility:`
 
 * How many lines needed for a new operation?  
 * New operations don’t break existing operations  
 * New operations don’t require heavy changes to existing operations
 
-	*Maintainability:*
+`Maintainability:`
 
 * Is HashTable resized when it grows too large?  
 * What time complexity are we getting on operations?  
