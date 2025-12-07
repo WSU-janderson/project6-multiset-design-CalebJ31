@@ -1,15 +1,15 @@
-**Introduction**  
+## Introduction
 My design models a player inventory system that uses a HashTable<string, int>. I have chosen this data structure to model my game system because a HashTable is able to store an item(string) and also keep count(int) of how many of this item we have in our inventory. The reason this is the best data structure to use is because of the ability to store the number(count) of a certain item that we have. Using a HashTable for our game system will be helpful because knowing the quantity of an item is extremely important.  
-**Design Philosophy**   
-**Efficiency**   
+## Design Philosophy
+### Efficiency  
 For my MultiSet implementation, I wanted to prioritize speed in my design. Speed is a huge focus of all modern games; players want to be able to play a game that runs smoothly and gives seemingly instantaneous feedback. This is demonstrated by McCoy and Pandey, who note that HashTables are being used to accelerate data processing(McCoy & Pandey, 2025). For this exact reason, this is the main reasoning behind why the HashTable is an efficient choice for a multiSet implementation. Most operations of the HashTable are constant time (*Std::unordered\_map \- Cppreference.com*, 2025), which is perfect for what I want to achieve speed-wise for the game. Also, I can add more instances of an element without allocating extra memory for duplicates.  
-**Simplicity**   
+### Simplicity
 Our Hash Table exemplifies simplicity; we are able to use the string to store the name of the item, then use the int stored in it to represent how many occurrences/instances we have of that specific item. This data structure is also very intuitive in how it works; the client can easily see the intention of storing the object name as a string, and then using the int to keep track of the number of occurrences for that element.  
-**Extensibility**  
+### Extensibility  
 The Hash Table is easily extensible. This is perfect for games in this age, as they are constantly adding features to their architecture. The core operations of the HashTable allow us to add a multitude of things, such as merging inventories, managing player stats, or even managing card games.  
-**Readability**  
+### Readability
 HashTables are great for readability. The use of our key-value pairs is evident that the key is the name of the item, and the value is the number of that item. Other operations, like the insert or remove function, further demonstrate this readability and simplicity.  
-**Core Operations**  
+### Core Operations
 Every MultiSet should have 4 essential operations: an *insert* function, a *remove* function, a *count* function, and a *contains* function
 
 **Client**: Game developers  
