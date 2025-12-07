@@ -19,9 +19,9 @@ Every MultiSet should have 4 essential operations: an *insert* function, a *remo
 
 *    What it does conceptually in your chosen game scenario:
 
-	In my chosen game scenario, the insert function is responsible for adding items(key) into our player's inventory. In addition to adding the item(key), the insert function must also add the number of instances. This function can be used to accumulate items that may already be in the table, and update the value to indicate how many of the items the player has in the inventory.  
+In my chosen game scenario, the insert function is responsible for adding items(key) into our player's inventory. In addition to adding the item(key), the insert function must also add the number of instances. This function can be used to accumulate items that may already be in the table, and update the value to indicate how many of the items the player has in the inventory.  
     **• Its expected time complexity:**  
-	The insert function has O(1) average time. This function simply inserts the key if it is not in the MultiSet; if it is, then it will increment the value.  
+The insert function has O(1) average time. This function simply inserts the key if it is not in the MultiSet; if it is, then it will increment the value.  
 **![](InsertPsuedo.png)**  
 **Figure 1**  
     **• Possible edge cases or exceptional situations:**
