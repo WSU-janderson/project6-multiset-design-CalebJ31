@@ -59,26 +59,28 @@ The count function will provide the user with how many occurrences they have of 
 **Figure 2**
 
 **• Possible edge cases or exceptional situations:**  
+
 \- Getting the value associated with a key that does not exist. In this case, just return zero.
 
 **• How your underlying data structure supports or constrains the operation:** 
+
 The HashTable supports this operation because of its key-value setup. Since we are storing the count in the value, we can return, value as how many we have. The HashTable also makes this extremely efficient because the value is already stored. If a LinkedList were to be used, each element would have to be checked. If an AVL tree were used, duplicates would lead to a very complicated process. The HashTable is by far the best for the count function.
 
 **Contains function:**  
 
-	 **\-What it does conceptually in your chosen game scenario:**   
+* **\-What it does conceptually in your chosen game scenario:**   
 		In my game scenario, the contains function will be used to see if an element exists in the player's inventory. This function can allow a player to use a door if they have a key in their inventory, or even craft items if they have the required items in their inventory  
 
-	 **• Its expected time complexity:**  
+* **Its expected time complexity:**  
 		Expected time complexity is O(1). This function just checks if the key exists or not.  
 
-	 **• Possible edge cases or exceptional situations:** N/A  
+* **Possible edge cases or exceptional situations:** N/A  
 
-	 **• How your underlying data structure supports or constrains the operation:**  
+* **How your underlying data structure supports or constrains the operation:**  
 	   A HashTable supports this operation well, since this operation only cares if the key exists, so we are just checking for that. This function is also extremely quick and efficient.  
 	  
 ## **Set Operations**  
-	Two set operations that are meaningful in my game are *union\_with()* and *intersection\_with().*
+Two set operations that are meaningful in my game are *union\_with()* and *intersection\_with().*
 
 **union\_with():**
 
