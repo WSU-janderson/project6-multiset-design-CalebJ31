@@ -50,24 +50,30 @@ In the selected game scenario, the remove function will decrement the value if t
    
 **Count Function:**
 
-*  **What it does conceptually in your chosen game scenario:** 
-		The count function will provide the user with how many occurrences they have of a certain item. This function is important because it can be used for crafting purposes. If a player does not have enough of an item, they are not able to craft another item.  
-	 **• Its expected time complexity:**  
+ **What it does conceptually in your chosen game scenario:** 
+The count function will provide the user with how many occurrences they have of a certain item. This function is important because it can be used for crafting purposes. If a player does not have enough of an item, they are not able to craft another item.  
+
+**• Its expected time complexity:**  
 		Simply O(1) time. This function is just retrieving the value stored with the associated key.  
 ![](CountPsuedo.png) 
 **Figure 2**
 
- **• Possible edge cases or exceptional situations:**  
+**• Possible edge cases or exceptional situations:**  
 \- Getting the value associated with a key that does not exist. In this case, just return zero.  
-	 **• How your underlying data structure supports or constrains the operation:**  
+	 **• How your underlying data structure supports or constrains the operation:** 
+
 		The HashTable supports this operation because of its key-value setup. Since we are storing the count in the value, we can return, value as how many we have. The HashTable also makes this extremely efficient because the value is already stored. If a LinkedList were to be used, each element would have to be checked. If an AVL tree were used, duplicates would lead to a very complicated process. The HashTable is by far the best for the count function.
 
 **Contains function:**  
+
 	 **\-What it does conceptually in your chosen game scenario:**   
 		In my game scenario, the contains function will be used to see if an element exists in the player's inventory. This function can allow a player to use a door if they have a key in their inventory, or even craft items if they have the required items in their inventory  
+
 	 **• Its expected time complexity:**  
 		Expected time complexity is O(1). This function just checks if the key exists or not.  
+
 	 **• Possible edge cases or exceptional situations:** N/A  
+
 	 **• How your underlying data structure supports or constrains the operation:**  
 	   A HashTable supports this operation well, since this operation only cares if the key exists, so we are just checking for that. This function is also extremely quick and efficient.  
 	  
@@ -76,7 +82,7 @@ In the selected game scenario, the remove function will decrement the value if t
 
 **union\_with():**
 
-* **What it accomplishes in gameplay:**
+**What it accomplishes in gameplay:**
 
 	The union function will be pivotal in joining the player's inventory with any other instance when the player obtains loot or new items. The union operation is very important for the game because it is heavily focused on obtaining loot from a multitude of situations that could range from other players, enemies, or chests. Another application of this function is that the player could have items across multiple chests, so the total count of the items in all chests is be able to be shown.
 
@@ -88,14 +94,16 @@ In the selected game scenario, the remove function will decrement the value if t
 		The union function is straightforward. This operation acts as a way to add the counts of items together in almost every case. For example, if there is 1 arrow in a MultiSet and 2 in another, there are 3 total arrows. This is the logic behind the operation.  
 	**Edge Cases:**  
 		Empty Sets. Empty Sets will be treated as if there is nothing.  
+
 **inersection\_with():**
 
 * **What it accomplishes in gameplay** 
 
 	The intersection operation can be used for checking if a player has the needed materials in their inventory to craft an item. If the items are not shared, the player will be blocked from crafting the item. This operation can also be used for determining if a player has the required items to complete a quest.  
+
 **• How it manipulates your data structure** 
 
-- This operation manipulates the data structure by iterating through the HashTables looking for the element in each table. If the element exists in each table, then allow the player to perform the necessary action. If the element does not exist in each table, do not allow the player to perform the action.
+ This operation manipulates the data structure by iterating through the HashTables looking for the element in each table. If the element exists in each table, then allow the player to perform the necessary action. If the element does not exist in each table, do not allow the player to perform the action.
 
 **• Its conceptual complexity and any relevant edge cases**   
 	**Conceptual complexity:**  
