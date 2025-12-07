@@ -101,17 +101,17 @@ The count function will provide the user with how many occurrences they have of 
 
 	The intersection operation can be used for checking if a player has the needed materials in their inventory to craft an item. If the items are not shared, the player will be blocked from crafting the item. This operation can also be used for determining if a player has the required items to complete a quest.  
 
-**• How it manipulates your data structure** 
+ * **• How it manipulates your data structure** 
 
  This operation manipulates the data structure by iterating through the HashTables looking for the element in each table. If the element exists in each table, then allow the player to perform the necessary action. If the element does not exist in each table, do not allow the player to perform the action.
 
-**• Its conceptual complexity and any relevant edge cases**   
+* **• Its conceptual complexity and any relevant edge cases**   
 	**Conceptual complexity:**  
 		Conceptually, it is clear that this operation is looking for shared elements among both HashTables. The logic required for this is also clear: iterate through and make sure the player has all of the needed items.  
 	**Edge cases:**  
 		\-Shared element is empty. If the MultiSet we are checking is empty, this may cause an error. This should be handled as if there were no requirements.  
 		\- Inventory and Shared Set are empty. This should always fail because there is nothing to truly craft.  
-**Extension Feature**  
+* **Extension Feature**  
 	The extension feature I chose for my game is craftRecipe(). Crafting is an essential part of games with inventories; being able to use items to craft something forces players to make strategic decisions about what they are willing to sacrifice, and about what they are not willing to. I chose this function to be an extension because it is a great representation of progression for the player.  
 	  **New Method: craftRecipe(recipe, result)**  
 		This method takes in the ingredients as the recipe; if the requirements for the recipe are met, then the item(result) can be crafted. This method must be able to check if the valid ingredients are present, decrement ingredients from the player's inventory, and increment or add the result to the player's inventory  
