@@ -218,5 +218,18 @@ Scales well for inventory           Easier to understand
 
 
 Alternitive Design Sketch
+If I had chosen to use the Sequence data structure for my design, the main difference would be the storage. 
+For the HashTable, I am using { “arrow”, 2} to show that the player has 2 arrows in their inventory. For the 
+Sequence, the data could be stored like this [ “arrow”, “x”, “arrow”, “x”].
+
+	How it would differ:
+Operation                   Modifactions 
+add                         The inserted element would need to be appended to the end of the list
+remove                      Linear search O(N) to find an element and delete it.
+count                       Traverse(Linear Search) the entire list to find every occurrence and increment it
+contains                    Linear search through the list to check if the sequence contains it.
+craftRecipe                 Use a linear search multiple times to verify each ingredient.
+
+
 Evaluation Plan
 Conclusion/Reflection
