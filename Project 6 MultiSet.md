@@ -15,7 +15,7 @@ Every MultiSet should have 4 essential operations: an *insert* function, a *remo
 **Client**: Game developers  
 **User**: Consumers of products put forth by developers.
 
-`**Insert Function:**`
+``**Insert Function:**``
 
 * **What it does conceptually in your chosen game scenario:**
 
