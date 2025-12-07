@@ -27,7 +27,7 @@ The insert function has O(1) average time. This function simply inserts the key 
 **Figure 1**  
 * **Possible edge cases or exceptional situations:**
 
-- Inserting a key with an empty name
+	- Inserting a key with an empty name
 
 * **How your underlying data structure supports or constrains the operation:**  
 	The HashTable data structure supports this operation well. The structure of a HashTable using key-value pairs is perfect for what I want to achieve. If a key does not yet exist, the operation simply inserts the key with a value of 1\. If the key does exist, the value is incremented. We are able to have direct access, skipping the need to look through all the keys, which can make our insertion near instantaneous.
