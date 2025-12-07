@@ -180,7 +180,12 @@ contains:
 * What time complexity are we getting on operations?  
 * How are collisions handled?
 
-**Conclusion/Reflection**
+## Conclusion/Reflection
+The design of this MultiSet implementation is strong and effective because of its speed and simplicity. The O(1) average time is perfect for a game inventory system, providing quick responses. The Key-Value structure used is great for modeling items and their count, which in turn is effective for our memory.
+
+The few trade-offs sacrificed for the use of our data structure were minimal compared to my goals for this project. The non-guaranteed ordering & O(n) worst-case time complexity in worst-case situations were outweighed by memory efficiency and reduced average-time complexity, among other things. With more time, I would update my operations to perform bulk tasks like removing or adding multiple elements at once. I would also update intersection_with specifically to be able to see checks for shared items. Upon reflecting, I see how that could provide importance to a game.
+Abstraction was shown through design choices for this implementation. The operations focus on the intended actions, and the data structure in use was hidden from the user. Doing this allows the user not to worry about the more complex implementation details. Encapsulation was shown through hidden helper methods that protected illegal state changes. The count was also protected from ever becoming negative by enforcing controlled access through the public interface, which ensures data integrity. Composition was shown through the craftRecipe() operation. This operation relied on the use of other core operations to simplify logic for the craftRecipe() operation. These three key programming principles were shown through decisions to create simple operations that are easier to understand, the protection of data from being manipulated, and the ability to use core operations to create more complex ones.
+
 
 **References**  
 McCoy, H., & Pandey, P. (2025, September 19). *WarpSpeed: A High-Performance Library for Concurrent GPU Hash Tables*. arxiv. https://arxiv.org/abs/2509.16407  
