@@ -61,7 +61,7 @@ The count function will provide the user with how many occurrences they have of 
 
 * **Possible edge cases or exceptional situations:**  
 
-\- Getting the value associated with a key that does not exist. In this case, just return zero.
+ Getting the value associated with a key that does not exist. In this case, just return zero.
 
 * **How your underlying data structure supports or constrains the operation:** 
 
@@ -69,7 +69,7 @@ The HashTable supports this operation because of its key-value setup. Since we a
 
 `Contains function:` 
 
-* **\-What it does conceptually in your chosen game scenario:**   
+* **What it does conceptually in your chosen game scenario:**   
 		In my game scenario, the contains function will be used to see if an element exists in the player's inventory. This function can allow a player to use a door if they have a key in their inventory, or even craft items if they have the required items in their inventory  
 
 * **Its expected time complexity:**  
